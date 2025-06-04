@@ -8,6 +8,7 @@ timmy = Turtle()
 timmy.shape("classic")
 timmy.home()
 
+
 def random_color():
     r = random.randint(0, 255)
     g = random.randint(0, 255)
@@ -35,10 +36,18 @@ def random_walk():
         timmy.color(random_color())
         timmy.setheading(turtle_direction[random_path])
         timmy.forward(25)
-
         count += 1
 
-random_walk()
+
+def draw_spirograph():
+    count = 0
+    timmy.speed(0)
+
+    while count < 360:
+        timmy.color(random_color())
+        timmy.setheading(count)
+        timmy.circle(radius=100)
+        count += 5
 
 screen = Screen()
 screen.exitonclick()
